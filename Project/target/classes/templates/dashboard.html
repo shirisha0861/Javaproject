@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+
+<style type="text/css">
+table {
+	border: 1px solid green;
+	width: 60%;
+	margin-left: 20%;
+	border-collapse: collapse;
+}
+
+td, th {
+	border: 1px solid green;
+	text-align: center;
+}
+
+th {
+	background: yellow;
+	color: red;
+}
+
+h1, h4 {
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<h1>Product DashBoard</h1>
+
+	<h4>
+		<a href="/addProduct">Add New Product</a>
+	</h4>
+	<table>
+
+		<tr>
+			<th>ID</th>
+			<th>NAME</th>
+			<th>CATEGORY</th>
+			<th>PRICE</th>
+			<th>ACTIONS</th>
+		</tr>
+
+		<tr th:each="product : ${allProducts}">
+			<td th:text="${product.id}">Product ID</td>
+			<td th:text="${product.name}">Product Name</td>
+			<td th:text="${product.category}">Product Category</td>
+			<td th:text="${product.price}">Product Price</td>
+			<td><a th:href='@{/editProduct/}+ ${product.id}'>Edit</a> | <a
+				th:href='@{/deleteProduct/}+ ${product.id}'>Delete</a></td>
+
+		</tr>
+
+	</table>
+</body>
+</html>

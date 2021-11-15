@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+</head>
+<body>
+	<h1>Welcome to Spring Boot Application</h1>
+
+	<form action="#" th:action="@{/login}" method="post">
+
+		Email: <input type="email" name="email"> <br> <br>
+		Password: <input type="password" name="password"> <br> <br>
+		<input type="submit" value="LOGIN"> | <input type="reset"
+			value="RESET">
+
+	</form>
+
+	<hr>
+
+	<a href="/register">New User</a>
+</body>
+</html>
